@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom CSS for effects */
+        .greyscale {
+            filter: grayscale(100%);
+        }
+
+        .invert {
+            filter: invert(100%);
+        }
+
+        .sepia {
+            filter: sepia(100%);
+        }
+
+        .hue {
+            filter: hue-rotate(90deg);
+        }
+
+        .contrast {
+            filter: contrast(200%);
+        }
+
+        .brightness {
+            filter: brightness(150%);
+        }
+
+        .saturate {
+            filter: saturate(200%);
+        }
+
+        .blur {
+            filter: blur(8px);
+        }
+    </style>
+</head>
+
+<body>
+    <img class='pic greyscale' src="randompic.jpg" alt="Picture" id="pic">
+    <div>
+        <button class="border-4 p-2 m-1" onclick="toggleEffect('blur')">Blur</button>
+        <button class="border-4 p-2 m-1" onclick="toggleEffect('greyscale')">Greyscale</button>
+        <button class="border-4 p-2 m-1" onclick="toggleEffect('invert')">Invert</button>
+        <button class="border-4 p-2 m-1" onclick="toggleEffect('sepia')">Sepia</button>
+        <button class="border-4 p-2 m-1" onclick="toggleEffect('hue')">Hue</button>
+        <button class="border-4 p-2 m-1" onclick="toggleEffect('contrast')">Contrast</button>
+        <button class="border-4 p-2 m-1" onclick="toggleEffect('brightness')">Brightness</button>
+        <button class="border-4 p-2 m-1" onclick="toggleEffect('saturate')">Saturate</button>
+    </div>
+
+    <script>
+        function toggleEffect(effect) {
+            const pic = document.getElementById('pic');
+            const effects = ['blur', 'greyscale', 'invert', 'sepia', 'hue', 'contrast', 'brightness', 'saturate'];
+
+            effects.forEach(e => {
+                if (e !== effect) {
+                    pic.classList.remove(e);
+                }
+            });
+
+            pic.classList.toggle(effect);
+        }
+    </script>
+</body>
+
+</html>
